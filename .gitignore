@@ -3,4 +3,5 @@ mah-pages/
 node_modules/
 pages/custom/
 pages/.dat/
+sitepaths.json
 
