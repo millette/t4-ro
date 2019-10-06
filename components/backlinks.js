@@ -14,7 +14,6 @@ const Backlinks = ({ of }) => {
   */
 
   const rr = useRouter()
-  console.log('RR', rr)
   let [niet, custom, page] = rr.route.split('/')
   if (custom !== 'custom') page = false
 
@@ -32,7 +31,6 @@ const Backlinks = ({ of }) => {
 
   const backlinks = sitepaths.find((el) => el.page === (of || page)).backlinks
 
-  console.log('backlinks:', backlinks)
 
   return (
     <div>
