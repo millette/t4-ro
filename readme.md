@@ -18,7 +18,9 @@ php -t out -S localhost:3000 router.php # keep open
 # or http://localhost:3000/custom/all
 ```
 
-And now visiting as a quadrillion times faster, hourray!
+And now visiting is a quadrillion times faster, hourray! We're now using MDX at build-time instead of runtime, which makes a huge difference but requires that all the content be known as we build and export it.
+
+You can use any web server you want of course. Just point it to the `t4-ro/out/` directory and rewrite `/custom/` URLs without an extension to find the `.html` file.
 
 If you must stop `dat`, you can restart it like so:
 
