@@ -1,25 +1,32 @@
 // npm
 import LinkNextjs from "next/link"
 import App from "next/app"
+import { Fragment } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { ThemeProvider, Styled, ColorMode } from "theme-ui"
 import { toTheme } from "@theme-ui/typography"
-import typoTheme from "typography-theme-wikipedia"
+import typoTheme from "typography-theme-wordpress-2016"
 import { Heading, Text, Box, Link, Flex } from "rebass"
 import PropTypes from "prop-types"
 
 // self
-import { CustomPagesFactory, Clock, Backlinks } from "../components"
+import { CustomPages, Clock, Backlinks } from "../components"
+// import { CustomPagesFactory, Clock, Backlinks } from "../components"
 // import { CustomPagesFactory, ...comps } from "../components"
 // import compsImp from "../components"
 
 // const { CustomPagesFactory, ...comps } = compsImp
 
-const CustomPages = CustomPagesFactory([])
+// const CustomPages = CustomPagesFactory([])
 
 const theme = toTheme(typoTheme)
 
 const HeHa = () => <p>Heeeeeha</p>
+
+Flex.tournemain = { description: "Responsive flexbox layout component" }
+Box.tournemain = { description: "Responsive box-model layout component" }
+
+
 
 const h1 = ({ children }) => (
   <Heading as="h1" my={2} fontSize={5}>
@@ -101,6 +108,50 @@ const components = {
   Clock,
   Backlinks,
 }
+
+  const CustomTags = () => (
+    <dl>
+      {Object.keys(components).map((tag) => {
+        if (
+          !components[tag].tournemain ||
+          !components[tag].tournemain.description
+        )
+          return
+        return (
+          <Fragment key={tag}>
+            <dt>
+              <code>&lt;{tag} /&gt;</code>
+            </dt>
+            <dd>{components[tag].tournemain.description}</dd>
+
+            {tag !== "CustomTags" && (
+              <dd>
+                <details>
+                  <summary>Démo</summary>
+                  {tag === "Clock" ? (
+                    <Clock />
+                  ) : tag === "CustomPages" ? (
+                    <CustomPages />
+                  ) : tag === "Backlinks" ? (
+                    <Backlinks />
+                  ) : (
+                    <i>Not here</i>
+                  )}
+                </details>
+              </dd>
+            )}
+          </Fragment>
+        )
+      })}
+    </dl>
+  )
+
+  CustomTags.tournemain = { description: "Lists all available custom tags." }
+
+  components.CustomTags = CustomTags
+
+
+
 
 class MyApp extends App {
   render() {
