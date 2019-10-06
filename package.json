@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "node init && next build",
+    "export": "next export",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

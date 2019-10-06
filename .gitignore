@@ -2,6 +2,7 @@
 mah-pages/
 node_modules/
 pages/custom/
+out/
 pages/.dat/
 sitepaths.json
 
