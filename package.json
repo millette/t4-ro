@@ -35,8 +35,10 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "rebass": "^4.0.6",
+    "remark": "^11.0.1",
     "theme-ui": "^0.2.43",
-    "typography-theme-wikipedia": "^0.16.19"
+    "typography-theme-wordpress-2016": "^0.16.19",
+    "unist-util-select": "^2.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
