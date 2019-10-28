@@ -29,7 +29,7 @@
     "@mdx-js/loader": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "@next/mdx": "^9.1.1",
-    "@theme-ui/typography": "^0.2.40",
+    "@theme-ui/typography": "^0.2.46",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.1.1",
     "prop-types": "^15.7.2",
@@ -37,7 +37,7 @@
     "react-dom": "^16.11.0",
     "rebass": "^4.0.6",
     "remark": "^11.0.1",
-    "theme-ui": "^0.2.44",
+    "theme-ui": "^0.2.46",
     "typography-theme-wordpress-2016": "^0.16.19",
     "unist-util-select": "^3.0.0"
   },
