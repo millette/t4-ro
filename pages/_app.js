@@ -18,8 +18,6 @@ const HeHa = () => <p>Heeeeeha</p>
 Flex.tournemain = { description: "Responsive flexbox layout component" }
 Box.tournemain = { description: "Responsive box-model layout component" }
 
-
-
 const h1 = ({ children }) => (
   <Heading as="h1" my={2} fontSize={5}>
     {children}
@@ -141,9 +139,6 @@ const CustomTags = () => (
 CustomTags.tournemain = { description: "Lists all available custom tags." }
 
 components.CustomTags = CustomTags
-
-
-
 
 const MyApp = ({ Component, pageProps }) => (
   <ThemeProvider theme={theme}>
