@@ -24,6 +24,16 @@
       "plugin:react/recommended"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5",
+    "arrowParens": "always"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@mdx-js/loader": "^1.5.1",
@@ -43,6 +53,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "healthier": "^3.2.0"
+    "healthier": "^3.2.0",
+    "husky": "2.7.0",
+    "lint-staged": "9.3.0",
+    "prettier": "^1.18.2"
   }
 }
