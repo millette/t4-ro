@@ -1,6 +1,5 @@
 // npm
 import LinkNextjs from "next/link"
-// import App from "next/app"
 import { Fragment } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { ThemeProvider, Styled, ColorMode } from "theme-ui"
@@ -11,13 +10,6 @@ import PropTypes from "prop-types"
 
 // self
 import { CustomPages, Clock, Backlinks } from "../components"
-// import { CustomPagesFactory, Clock, Backlinks } from "../components"
-// import { CustomPagesFactory, ...comps } from "../components"
-// import compsImp from "../components"
-
-// const { CustomPagesFactory, ...comps } = compsImp
-
-// const CustomPages = CustomPagesFactory([])
 
 const theme = toTheme(typoTheme)
 
