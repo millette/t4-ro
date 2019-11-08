@@ -1,6 +1,6 @@
 // npm
 import LinkNextjs from "next/link"
-import App from "next/app"
+// import App from "next/app"
 import { Fragment } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { ThemeProvider, Styled, ColorMode } from "theme-ui"
@@ -109,66 +109,61 @@ const components = {
   Backlinks,
 }
 
-  const CustomTags = () => (
-    <dl>
-      {Object.keys(components).map((tag) => {
-        if (
-          !components[tag].tournemain ||
-          !components[tag].tournemain.description
-        )
-          return
-        return (
-          <Fragment key={tag}>
-            <dt>
-              <code>&lt;{tag} /&gt;</code>
-            </dt>
-            <dd>{components[tag].tournemain.description}</dd>
+const CustomTags = () => (
+  <dl>
+    {Object.keys(components).map((tag) => {
+      if (
+        !components[tag].tournemain ||
+        !components[tag].tournemain.description
+      )
+        return
+      return (
+        <Fragment key={tag}>
+          <dt>
+            <code>&lt;{tag} /&gt;</code>
+          </dt>
+          <dd>{components[tag].tournemain.description}</dd>
 
-            {tag !== "CustomTags" && (
-              <dd>
-                <details>
-                  <summary>Démo</summary>
-                  {tag === "Clock" ? (
-                    <Clock />
-                  ) : tag === "CustomPages" ? (
-                    <CustomPages />
-                  ) : tag === "Backlinks" ? (
-                    <Backlinks />
-                  ) : (
-                    <i>Not here</i>
-                  )}
-                </details>
-              </dd>
-            )}
-          </Fragment>
-        )
-      })}
-    </dl>
-  )
+          {tag !== "CustomTags" && (
+            <dd>
+              <details>
+                <summary>Démo</summary>
+                {tag === "Clock" ? (
+                  <Clock />
+                ) : tag === "CustomPages" ? (
+                  <CustomPages />
+                ) : tag === "Backlinks" ? (
+                  <Backlinks />
+                ) : (
+                  <i>Not here</i>
+                )}
+              </details>
+            </dd>
+          )}
+        </Fragment>
+      )
+    })}
+  </dl>
+)
 
-  CustomTags.tournemain = { description: "Lists all available custom tags." }
+CustomTags.tournemain = { description: "Lists all available custom tags." }
 
-  components.CustomTags = CustomTags
-
-
+components.CustomTags = CustomTags
 
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props
-    return (
-      <ThemeProvider theme={theme}>
-        <ColorMode />
-        <Styled.root>
-          <MDXProvider components={components}>
-            <Box mx={5}>
-              <Component {...pageProps} />
-            </Box>
-          </MDXProvider>
-        </Styled.root>
-      </ThemeProvider>
-    )
-  }
-}
+
+
+const MyApp = ({ Component, pageProps }) => (
+  <ThemeProvider theme={theme}>
+    <ColorMode />
+    <Styled.root>
+      <MDXProvider components={components}>
+        <Box mx={5}>
+          <Component {...pageProps} />
+        </Box>
+      </MDXProvider>
+    </Styled.root>
+  </ThemeProvider>
+)
 
 export default MyApp
