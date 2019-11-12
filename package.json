@@ -46,7 +46,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "rebass": "^4.0.7",
-    "remark": "^11.0.1",
+    "remark": "^11.0.2",
     "theme-ui": "^0.2.46",
     "typography-theme-wordpress-2016": "^0.16.19",
     "unist-util-select": "^3.0.0"
